@@ -1,2 +1,2 @@
 # Logstash
-Logstash 1.4.2
+Logstash 1.5.3
