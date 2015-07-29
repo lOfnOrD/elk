@@ -15,13 +15,13 @@ kibana:
     file: docker-compose-common.yml
     service: kibana
   build: dockerfiles/kibana
-logspout:
-  net: container:logstash
-  extends:
-    file: docker-compose-common.yml
-    service: logspout
-  build: dockerfiles/logspout
-cadvisor:
-  extends:
-    file: docker-compose-common.yml
-    service: cadvisor
+# logspout:
+#   net: container:logstash
+#   extends:
+#     file: docker-compose-common.yml
+#     service: logspout
+#   build: dockerfiles/logspout
+# cadvisor:
+#   extends:
+#     file: docker-compose-common.yml
+#     service: cadvisor
