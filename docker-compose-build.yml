@@ -14,4 +14,4 @@ kibana:
   extends:
     file: docker-compose-common.yml
     service: kibana
-  image: kibana
+  image: kibana:4.1.1
