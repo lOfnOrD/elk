@@ -3,6 +3,7 @@ FROM debian:jessie
 RUN apt-get update && \
     apt-get install -y wget 
 
+# Install JDK 8
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" > /etc/apt/sources.list.d/webupd8team-java.list
 RUN echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" >> /etc/apt/sources.list.d/webupd8team-java.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
