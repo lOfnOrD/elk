@@ -33,3 +33,10 @@ This document provide more details about how to setup ELK stack (Elasticsearch, 
 
   http://kibana
 
+== Build the Docker images locally?
+
+Do you want to build the Docker images locally?
+
+  docker-compose -f docker-compose-build.yml up -d
+
+Only builds Elastisearch and Logstash. Official image of Kibana is used.
