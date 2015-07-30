@@ -14,7 +14,10 @@ kibana:
   extends:
     file: docker-compose-common.yml
     service: kibana
-  build: dockerfiles/kibana
+  image: kibana
+  links:
+    - elasticsearch:elasticsearch
+  # build: dockerfiles/kibana
 # logspout:
 #   net: container:logstash
 #   extends:
