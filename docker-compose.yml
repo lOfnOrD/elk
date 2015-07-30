@@ -17,14 +17,3 @@ kibana:
   image: kibana
   links:
     - elasticsearch:elasticsearch
-  # build: dockerfiles/kibana
-# logspout:
-#   net: container:logstash
-#   extends:
-#     file: docker-compose-common.yml
-#     service: logspout
-#   build: dockerfiles/logspout
-# cadvisor:
-#   extends:
-#     file: docker-compose-common.yml
-#     service: cadvisor
