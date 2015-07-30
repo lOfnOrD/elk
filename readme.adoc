@@ -1,0 +1,31 @@
+= ELK Stack with WildFly
+
+This document provide more details about how to setup ELK stack (Elasticsearch, Logstash, and WildFly) with WildFly. It is based upon all the good work done in https://github.com/nathanleclaire/elk and http://wildfly.org/news/2015/07/25/Wildfly-And-ELK/.
+
+TL;DR
+
+. Find IP address of the Docker Machine:
+
+  docker-machine ip lab
+
+. Setup hosts in `/etc/hosts`:
+
+  <IP_ADDRESS> 	elasticsearch logstash kibana
+
+. Clone the repo:
+
+  git clone https://github.com/arun-gupta/elk.git
+  cd elk
+
+. Run ELK stack:
+
+  docker-compose up -d
+
+. Run instrumented WildFly image:
+
+  docker run -p 8080:8080 -it arungupta/wildfly-logstash
+
+. Access Kibana:
+
+  http://kibana
+
