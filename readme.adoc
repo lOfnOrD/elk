@@ -10,7 +10,7 @@ This document provide more details about how to setup ELK stack (Elasticsearch, 
 
 . Setup hosts in `/etc/hosts`:
 
-  <IP_ADDRESS> 	elasticsearch logstash kibana
+  <DOCKER_HOST_IP> 	elasticsearch logstash kibana
 
 == Run ELK Stack
 
@@ -18,25 +18,30 @@ This document provide more details about how to setup ELK stack (Elasticsearch, 
 
   git clone https://github.com/arun-gupta/elk.git
   cd elk
-
-. Run ELK stack:
++
+This will use the pre-built Elasticsearch, Logstack, and Kibana images.
++
+. Run the ELK stack:
 
   docker-compose up -d
 
-== Run WildFly
-
-. Run instrumented WildFly image:
-
-  docker run -p 8080:8080 -it arungupta/wildfly-logstash
-
-. Access Kibana:
-
-  http://kibana
-
-== Build the Docker images locally?
+=== Build the Docker images locally?
 
 Do you want to build the Docker images locally?
 
   docker-compose -f docker-compose-build.yml up -d
 
-Only builds Elastisearch and Logstash. Official image of Kibana is used.
+Only builds Elastisearch and Logstash images. Official image of Kibana is used.
+
+== Run WildFly
+
+. Run the instrumented WildFly image:
+
+  docker run -p 8080:8080 -it -e <DOCKER_HOST_IP> arungupta/wildfly-logstash
++
+Dockerfile: https://github.com/arun-gupta/docker-images/tree/master/wildfly-logstash
++
+. Access Kibana:
+
+  http://kibana
+
