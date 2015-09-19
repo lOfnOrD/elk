@@ -18,12 +18,11 @@ This document provide more details about how to setup ELK stack (Elasticsearch, 
 
   git clone https://github.com/arun-gupta/elk.git
   cd elk
-+
-This will use the pre-built Elasticsearch, Logstack, and Kibana images.
-+
 . Run the ELK stack:
 
   docker-compose up -d
++
+This will use the pre-built Elasticsearch, Logstack, and Kibana images.
 
 === Build the Docker images locally?
 
