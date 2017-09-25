@@ -13,4 +13,4 @@ logstash:
   command: -f /etc/logstash.sample.conf
 kibana:
   ports:
-    - "80:5601"
+    - "5601:5601"
