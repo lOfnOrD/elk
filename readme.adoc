@@ -1,46 +1,16 @@
 = ELK Stack with WildFly
 
-This document provide more details about how to setup ELK stack (Elasticsearch, Logstash, and WildFly) with WildFly. It is based upon all the good work done in https://github.com/nathanleclaire/elk and http://wildfly.org/news/2015/07/25/Wildfly-And-ELK/.
-
-== Setup Docker Hosts
-
-. Find IP address of the Docker Machine:
-
-  docker-machine ip lab
-
-. Setup hosts in `/etc/hosts`:
-
-  <DOCKER_HOST_IP> 	elasticsearch logstash kibana
+This document provide more details about how to setup ELK stack (Elasticsearch, Logstash, and Kibana) for use with WildFly and the SocketHandler found in https://github.com/lOfnOrD/jboss-logmanager-ext. It is based upon all the good work done in https://github.com/arun-gupta/elk and http://wildfly.org/news/2015/07/25/Wildfly-And-ELK/.
 
 == Run ELK Stack
 
 . Clone the repo:
 
-  git clone https://github.com/arun-gupta/elk.git
+  git clone https://github.com/lOfnOrD/elk.git
   cd elk
 . Run the ELK stack:
 
   docker-compose up -d
 +
 This will use the pre-built Elasticsearch, Logstack, and Kibana images.
-
-=== Build the Docker images locally?
-
-Do you want to build the Docker images locally?
-
-  docker-compose -f docker-compose-build.yml up -d
-
-Only builds Elastisearch and Logstash images. Official image of Kibana is used.
-
-== Run WildFly
-
-. Run the instrumented WildFly image:
-
-  docker run -p 8080:8080 -it -e <DOCKER_HOST_IP> arungupta/wildfly-logstash
-+
-Dockerfile: https://github.com/arun-gupta/docker-images/tree/master/wildfly-logstash
-+
-. Access Kibana:
-
-  http://kibana
 
