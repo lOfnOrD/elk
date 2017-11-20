@@ -1,0 +1,10 @@
+# modified Kibana configuration from kibana-docker.
+
+server:
+  name: kibana
+  host: "0"
+  defaultRoute: "/app/monitoring"
+elasticsearch:
+  url: http://elasticsearch:9200
+  username: elastic
+  password: changeme
