@@ -25,3 +25,11 @@ kibana:
   image: docker.elastic.co/kibana/kibana:6.0.0
   links:
     - elasticsearch:elasticsearch
+curator:
+  image: bobrik/curator:5.4.0
+  volumes:
+    - "./curator/actions/:/usr/share/curator/actions/"
+    - "./curator/config/curator.yml:/.curator/curator.yml"
+  links:
+    - elasticsearch:elasticsearch
+  command: "/usr/share/curator/actions/delete_indices.yml"
