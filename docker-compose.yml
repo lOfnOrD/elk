@@ -5,7 +5,7 @@ elasticsearch:
   environment:
     discovery.type: single-node
     ES_JAVA_OPTS: "-Xms750m -Xmx750m"
-  image: docker.elastic.co/elasticsearch/elasticsearch:6.0.0
+  image: docker.elastic.co/elasticsearch/elasticsearch:6.1.0
 logstash:
   ports:
     - "5000:5000"
@@ -14,7 +14,7 @@ logstash:
     LOGSPOUT: ignore
   volumes:
      - "./logstash/pipeline/:/usr/share/logstash/pipeline/"
-  image: docker.elastic.co/logstash/logstash:6.0.0
+  image: docker.elastic.co/logstash/logstash:6.1.0
   links:
     - elasticsearch:elasticsearch
 kibana:
@@ -22,7 +22,7 @@ kibana:
     - "5601:5601"
   volumes:
       - "./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml"
-  image: docker.elastic.co/kibana/kibana:6.0.0
+  image: docker.elastic.co/kibana/kibana:6.1.0
   links:
     - elasticsearch:elasticsearch
 curator:
